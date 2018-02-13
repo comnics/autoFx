@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Coin FX Test</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+
+    <link href="css/app.css" rel="stylesheet">
+
+    <script src="js/util.js"></script>
+
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>FX Test</h2>
+        <p class="lead">Test version 0.5</p>
+        <p class="lead font-weight-bold">Test 버전은 무조건 0.000001코인만 사고 팝니다.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Current Price</span>
+            <span class="badge badge-secondary badge-pill"></span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">BTC</h6>
+                <small class="text-muted">bitcoin</small>
+              </div>
+              <span class="text-muted" id="BTCCurrentPrice">10000000원</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">ETH</h6>
+                <small class="text-muted">ethereum</small>
+              </div>
+              <span class="text-muted">10000000원</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Third item</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Promo code</h6>
+                <small>EXAMPLECODE</small>
+              </div>
+              <span class="text-success">-$5</span>
+            </li>
+          </ul>
+
+          <form class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Coin code">
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-secondary">Search</button>
+              </div>
+            </div>
+          </form>
+          
+          <div class="p-2"></div>
+          
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">My Wallet</span>
+            <span class="badge badge-secondary badge-pill"></span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">BTC</h6>
+                <small class="text-muted">bitcoin</small>
+              </div>
+              <span class="text-muted">10000000 Won</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">ETH</h6>
+                <small class="text-muted">ethereum</small>
+              </div>
+              <span class="text-muted">10000000 Won</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (KRW)</span>
+              <strong>2000000 Won</strong>
+            </li>
+          </ul>
+          
+        </div>
+        
+        
+        
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">FX Configuration</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">API Key</label>
+                <input type="text" class="form-control" id="inApiKey" placeholder="" value="" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Secret Key</label>
+                <input type="text" class="form-control" id="inSecretKey" placeholder="" value="" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="fxCoin">Fx Coin</label>
+                <select class="custom-select d-block w-100" id="inFxCoin" required>
+                  <option value="BTC">BTC</option>
+                  <option value="ETH">ETH</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="fxBuy">Buy(시작 대비 %)</label>
+                <input type="number" class="form-control" id="inFxBuy" placeholder="매입시점" value="10" required>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="fxSell">Sell(%)</label>
+                <input type="number" class="form-control" id="inFxSell" placeholder="매도시점" value="10" required>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="same-address">
+              <label class="custom-control-label" for="same-address">투자에 대한 책임은 본인 진다.</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="save-info">
+              <label class="custom-control-label" for="save-info">동의 합니다.</label>
+            </div>
+            <hr class="mb-4">
+
+            <button class="btn btn-primary btn-lg btn-block" id="btnFxStartStop" type="submit">Fx Start</button>
+          </form>
+
+          <div class="p-2"></div>
+
+          <div id="fxConfigureInfo">
+            FX Configuration Info.
+
+          </div>
+          <div id="fxConsole">
+            >> fx console
+
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2018 Company Name</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="   crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<!--     <script src="assets/js/vendor/popper.min.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/holder.min.js"></script>
+
+    <script src="js/config.js"></script>
+    <script src="js/class/Fx.class.js"></script>
+
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+    
+    
+     <script src="js/app.js"></script>
+
+    
+  </body>
+</html>

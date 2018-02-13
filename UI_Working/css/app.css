@@ -1,0 +1,13 @@
+#fxConfigureInfo{
+    border: 1px solid #aaa;
+    height: 70px;
+    overflow: auto;
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+
+#fxConsole{
+    border: 1px solid #aaa;
+    height: 300px;
+    overflow: auto;
+}
